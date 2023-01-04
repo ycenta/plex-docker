@@ -4,9 +4,11 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
+    networks:
+      - prowradsonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${ID}
+      - PGID=${ID}
       - VERSION=docker
       - PLEX_CLAIM= #optional
     volumes:
@@ -31,8 +33,8 @@ services:
     networks:
       - prowradsonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${ID}
+      - PGID=${ID}
       - TZ=America/New_York
     volumes:
       - ./overseerr/appdata/config:/config
@@ -46,8 +48,8 @@ services:
     networks:
       - prowradsonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${ID}
+      - PGID=${ID}
       - TZ=Europe/London
       - DELUGE_LOGLEVEL=error #optional
     volumes:

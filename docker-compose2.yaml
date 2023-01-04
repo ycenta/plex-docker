@@ -7,8 +7,8 @@ services:
     networks:
       - prowradsonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${ID}
+      - PGID=${ID}
       - TZ=Europe/London
     volumes:
       - ./sonarr/data:/config
@@ -24,8 +24,8 @@ services:
     networks:
       - prowradsonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${ID}
+      - PGID=${ID}
       - TZ=Europe/London
     volumes:
       - ./bazarr/config:/config
@@ -41,8 +41,8 @@ services:
     networks:
       - prowradsonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${ID}
+      - PGID=${ID}
       - TZ=Europe/London
     volumes:
       - ./prowlarr/data:/config
@@ -56,8 +56,8 @@ services:
     networks:
       - prowradsonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${ID}
+      - PGID=${ID}
       - TZ=Europe/London
     volumes:
       - ./radarr/data:/config
